@@ -5,25 +5,67 @@
   --trust: #00b67a;
   --background: #0e0c14;
   --grey: rgba(255, 255, 255, 0.5);
-  --gradient: linear-gradient(90deg, #BA69CC -12.08%, #8B76F7 39.1%, #28B7D5 81.87%, #F2B75B 130%);
-  --border1:linear-gradient(274.32deg, rgba(255, 255, 255, 0.5) 0.23%, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0.25) 100%);
-
+  --gradient: linear-gradient(
+    90deg,
+    #ba69cc -12.08%,
+    #8b76f7 39.1%,
+    #28b7d5 81.87%,
+    #f2b75b 130%
+  );
+  --border1: linear-gradient(
+    274.32deg,
+    rgba(255, 255, 255, 0.5) 0.23%,
+    rgba(255, 255, 255, 0) 100%,
+    rgba(255, 255, 255, 0.25) 100%
+  );
 }
 
-html, body{
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-
 }
 
 body {
   background-color: var(--background);
   display: flex;
+  flex-direction: column;
   align-content: center;
+  justify-content: space-around;
   height: 100vh;
+}
+.review_head {
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+}
+.review_head_title {
+  display: flex;
+  justify-content: center;
+  margin-left: 8.33%;
+  width: 100%;
+  font-size: 2.5rem;
+}
+.review_head_title h1 {
+  color: var(--secondary);
+}
+.review_head_title #student {
+  color: var(--rating);
+  margin-right: 0.5rem;
+}
+.review_head_link {
+  margin-right: 8.33%;
+  width: 100%;
+  text-align: right;
+}
+.review_head_link h4 {
+  font-size: 1.5rem;
+  text-align: right;
+  color: var(--secondary);
+  text-decoration: underline;
 }
 .slider {
   display: flex;
@@ -43,7 +85,7 @@ body {
   margin: 0 1.39vw;
 }
 
-#pic{
+#pic {
   align-self: flex-end;
   margin-right: 9%;
 }
