@@ -5,7 +5,20 @@
   --trust: #00b67a;
   --background: #0e0c14;
   --grey: rgba(255, 255, 255, 0.5);
+  --gradient: linear-gradient(90deg, #BA69CC -12.08%, #8B76F7 39.1%, #28B7D5 81.87%, #F2B75B 130%);
+  --border1:linear-gradient(274.32deg, rgba(255, 255, 255, 0.5) 0.23%, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0.25) 100%);
+
 }
+
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+}
+
 body {
   background-color: var(--background);
   display: flex;
@@ -14,34 +27,45 @@ body {
 }
 .slider {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   min-width: 400vw;
   cursor: grab;
 }
 .slide {
   background-color: var(--primary);
   width: 30vw;
-  height: 50vh;
+  height: 40vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1.39vw;
 }
+
+#pic{
+  align-self: flex-end;
+  margin-right: 9%;
+}
+
 .content {
-  position: relative;
+  /* position: relative; */
+  /* padding: 5% 0%; */
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 21%;
 }
-.content #pic {
-  position: absolute;
-  top: -12%;
-  right: 9%;
-}
+
 .content h1 {
   color: var(--secondary);
-  font-size: 22px;
+  font-size: 1.375rem;
   line-height: 150%;
 }
 .content h4 {
   color: var(--secondary);
   opacity: 0.5;
-  font-size: 16px;
+  font-size: 1rem;
   text-decoration: underline;
   margin: 0 9%;
   line-height: 150%;
