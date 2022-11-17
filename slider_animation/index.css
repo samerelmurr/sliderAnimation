@@ -18,7 +18,7 @@
     rgba(255, 255, 255, 0) 100%,
     rgba(255, 255, 255, 0.25) 100%
   );
-  --sliderSize: 6;
+  --sliderSize: 0;
   --slideWidth: 40vw;
 }
 
@@ -82,7 +82,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* min-width: 600vw; */
+  /* min-width: 300vw; */
   min-width: calc(var(--slideWidth) * var(--sliderSize));
   /* min-width: calc(40vw * var(--carrocelSize)); */
   cursor: grab;
