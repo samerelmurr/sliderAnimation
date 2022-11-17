@@ -1,4 +1,8 @@
-"use strict";
+const resizeObserver = new ResizeObserver(entries => {
+
+});
+
+resizeObserver.observe(document.querySelector(".slider"));
 
 function carousel() {
   let carouselSlider = document.querySelector(".slider");

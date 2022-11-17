@@ -18,6 +18,8 @@
     rgba(255, 255, 255, 0) 100%,
     rgba(255, 255, 255, 0.25) 100%
   );
+  --sliderSize: 6;
+  --slideWidth: 40vw;
 }
 
 html,
@@ -80,9 +82,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 200vw;
-  width: 50vh;
-  width: 100vw;
+  /* min-width: 600vw; */
+  min-width: calc(var(--slideWidth) * var(--sliderSize));
+  /* min-width: calc(40vw * var(--carrocelSize)); */
   cursor: grab;
   position: relative;
 }
@@ -110,7 +112,7 @@ body {
 }
 
 .slide:hover {
-    
+
   font-size: 30px;
   background-color: rgba(255, 255, 255, 0.7);
 }
