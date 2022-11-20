@@ -150,11 +150,11 @@ function displayCustomerReview(customerReview){
                     <h4>${item.occupation}</h4>
                     <p>${item.review}</p>
                     <div class="content_rating">
-                        <img src="./images/Star.png" alt="star" />
-                        <img src="./images/Star.png" alt="star" />
-                        <img src="./images/Star.png" alt="star" />
-                        <img src="./images/Star.png" alt="star" />
-                        <img src="./images/Star.png" alt="star" />
+                        <img src="./images/star.png" alt="star" />
+                        <img src="./images/star.png" alt="star" />
+                        <img src="./images/star.png" alt="star" />
+                        <img src="./images/star.png" alt="star" />
+                        <img src="./images/star.png" alt="star" />
                     </div>
                     <div class="content_certificate">
                         <img src="./images/trust-logo.png" alt="trust-logo" />
