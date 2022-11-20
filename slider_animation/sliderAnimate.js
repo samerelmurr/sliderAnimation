@@ -214,6 +214,26 @@ function carousel() {
     b = setInterval(moveSecond, 10);
   }
 
+  // function drag() {
+  //   let dragStart = 0;
+  //   let dragEnd = 0;
+
+  //   list.addEventListener("mousedown", (e) => {
+  //     dragStart = e.clientX;
+  //   });
+
+  //   list.addEventListener("mouseup", (e) => {
+  //     dragEnd = e.clientX;
+  //     if (dragStart > dragEnd) {
+  //       x -= 100;
+  //       x2 -= 100;
+  //     } else {
+  //       x += 100;
+  //       x2 += 100;
+  //     }
+  //   });
+  // }
+
   clone();
 
   let a = setInterval(moveFirst, 10);
@@ -222,11 +242,6 @@ function carousel() {
   carouselSlider.addEventListener("mouseenter", hover);
   carouselSlider.addEventListener("mouseleave", unhover);
 }
-// window.addEventListener("DOMContentLoaded", () => {
-//   rootVar.style.setProperty("--sliderSize", `${customerReview.length}`);
-//   displayCustomerReview(customerReview);
-//   carousel();
-// });
 
 function loadAnimation() {
   rootVar.style.setProperty("--sliderSize", `${customerReview.length}`);
@@ -247,19 +262,4 @@ function loadAnimation() {
       // Let's go
       loadAnimation();
   }
-  })();
-// (async () => {
-//   // Using a for..of loop in case you want more slideshows on page.
-//   for (const slideshow of [...document.querySelectorAll(".slideshow")]) {
-//       // Wait for all images to load before initializing the slideshow
-//       for (const image of [...slideshow.children]) {
-//       await new Promise(resolve => {
-//           if (image.complete) resolve();
-//           else image.onload = resolve;
-//       });
-//       }
-
-//       // Let's go
-//       initSlideshow(slideshow);
-//   }
-//   })();
+})();
