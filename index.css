@@ -74,7 +74,7 @@ body {
   text-decoration: underline;
 }
 
-.slider__container {
+.slider {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,7 +84,7 @@ body {
   overflow: hidden;
 }
 
-.slider {
+.slider__container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,7 +94,7 @@ body {
   position: relative;
 }
 
-.slides__container {
+.slider__container__slides {
   position: absolute;
   width: 100%;
   top: 50%;
@@ -105,7 +105,7 @@ body {
   justify-content: space-around;
 }
 
-.slide {
+.slider__container__slides__slide {
   background-color: var(--primary);
   width: 40vw;
   height: 40vh;
@@ -116,7 +116,7 @@ body {
   margin: 0 1.39vw;
 }
 
-.slide:hover {
+.slider__container__slides__slide:hover {
   /* font-size: 30px; */
   scale: 1.1;
   background-color: rgba(255, 255, 255, 0.7);

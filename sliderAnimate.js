@@ -140,7 +140,7 @@ let customerReview = [
 function displayCustomerReview(customerReview) {
 
   let customerReviewItems = customerReview.map((item) => {
-    return `<div class="slide">
+    return `<div class="slider__container__slides__slide">
                 <img id="pic" src="${item.image}" draggable="false"  alt="pic" />
                 <div class="content">
                     <div class="content_header">
@@ -164,12 +164,12 @@ function displayCustomerReview(customerReview) {
   });
 
   customerReviewItems = customerReviewItems.join("");
-  document.querySelector(".slides__container").innerHTML = customerReviewItems;
+  document.querySelector(".slider__container__slides").innerHTML = customerReviewItems;
 };
 
 function carousel() {
-  let carouselSlider = document.querySelector(".slider");
-  let list = document.querySelector(".slides__container");
+  let carouselSlider = document.querySelector(".slider__container");
+  let list = document.querySelector(".slider__container__slides");
   let list2;
 
   const speed = 1;
@@ -274,7 +274,7 @@ function loadAnimation() {
 }
 
 (async () => {
-  for (const customerReview of [...document.querySelectorAll(".slides__container")]) {
+  for (const customerReview of [...document.querySelectorAll(".slider__container__slides")]) {
     // Wait for all images to load before initializing the slideshow
     for (const review of [...customerReview.children]) {
       await new Promise(resolve => {
