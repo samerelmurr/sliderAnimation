@@ -37,6 +37,12 @@ body {
   flex-direction: column;
   align-content: center;
   justify-content: space-around;
+  /* remove text selection */
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 .review_head {
   display: flex;
@@ -68,7 +74,7 @@ body {
   text-decoration: underline;
 }
 
-.slider__container{
+.slider__container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +91,6 @@ body {
   /* min-width: 300vw; */
   min-width: calc(var(--slideWidth) * var(--sliderSize));
   /* min-width: calc(40vw * var(--carrocelSize)); */
-  cursor: grab;
   position: relative;
 }
 
@@ -112,8 +117,8 @@ body {
 }
 
 .slide:hover {
-
-  font-size: 30px;
+  /* font-size: 30px; */
+  scale: 1.1;
   background-color: rgba(255, 255, 255, 0.7);
 }
 
