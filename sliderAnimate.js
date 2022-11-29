@@ -1,3 +1,5 @@
+// no hover
+let customerReviewItems;
 const rootVar = document.querySelector(":root");
 let customerReview = [
   {
@@ -139,30 +141,55 @@ let customerReview = [
 
 function displayCustomerReview(customerReview) {
 
-  let customerReviewItems = customerReview.map((item) => {
-    return `<div class="slider__container__slides__slide">
+  if(window.innerWidth > 500) {
+    customerReviewItems = customerReview.map((item) => {
+      return `<div class="slider__container__slides__slide">
                 <img id="pic" src="${item.image}" draggable="false"  alt="pic" />
                 <div class="content">
+                  <div class="content_header">
+                    <h1 class="name">${item.name}</h1>
+                    <img src="./images/linkedin.png" draggable="false" alt="linkedin"  />
+                  </div>
+                  <h4 class="occupation">${item.occupation}</h4>
+                  <p class="review">${item.review}</p>
+                  <div class="content_rating">
+                    <img src="./images/star.png" draggable="false" alt="star" />
+                    <img src="./images/star.png" draggable="false" alt="star" />
+                    <img src="./images/star.png" draggable="false" alt="star" />
+                    <img src="./images/star.png" draggable="false"  alt="star" />
+                    <img src="./images/star.png" draggable="false" alt="star" />
+                  </div>
+                  <div class="content_certificate">
+                    <img src="./images/trust-logo.png" draggable="false" alt="trust-logo" />
+                  </div>
+                </div>
+              </div>`;
+    });
+  } else {
+    customerReviewItems = customerReview.map((item) => {
+      return `<div class="slider__container__slides__slide">
+                  <div class="content">
                     <div class="content_header">
-                        <h1>${item.name}</h1>
-                        <img src="./images/linkedin.png" draggable="false" alt="linkedin"  />
+                      <img id="pic" src="${item.image}" draggable="false"  alt="pic" />
+                      <h1 class="name">${item.name}</h1>
+                      <img src="./images/linkedin.png" draggable="false" alt="linkedin"  />
                     </div>
-                    <h4>${item.occupation}</h4>
-                    <p>${item.review}</p>
+                    <h4 class="occupation">${item.occupation}</h4>
+                    <p class="review">${item.review}</p>
                     <div class="content_rating">
-                        <img src="./images/star.png" draggable="false" alt="star" />
-                        <img src="./images/star.png" draggable="false" alt="star" />
-                        <img src="./images/star.png" draggable="false" alt="star" />
-                        <img src="./images/star.png" draggable="false"  alt="star" />
-                        <img src="./images/star.png" draggable="false" alt="star" />
+                      <img src="./images/star.png" draggable="false" alt="star" />
+                      <img src="./images/star.png" draggable="false" alt="star" />
+                      <img src="./images/star.png" draggable="false" alt="star" />
+                      <img src="./images/star.png" draggable="false"  alt="star" />
+                      <img src="./images/star.png" draggable="false" alt="star" />
                     </div>
                     <div class="content_certificate">
                         <img src="./images/trust-logo.png" draggable="false" alt="trust-logo" />
                     </div>
-                </div>
-            </div>`;
-  });
-
+                  </div>
+              </div>`;
+    });
+  }
   customerReviewItems = customerReviewItems.join("");
   document.querySelector(".slider__container__slides").innerHTML = customerReviewItems;
 };
@@ -223,48 +250,44 @@ function carousel() {
 
   carouselSlider.addEventListener("mouseenter", hover);
   carouselSlider.addEventListener("mouseleave", unhover);
-  // let clicked = false;
-  // let moved = false;
-  // let lastX = 0;
-  // let lastX2 = 0;
+  let clicked = false;
+  let moved = false;
+  let lastX = 0;
+  let lastX2 = 0;
+
   function down() {
     carouselSlider.style.cursor = "grabbing";
-    // clicked = true;
+    clicked
+    = true;
   }
   function up() {
+    console.log("up", x, x2);
     carouselSlider.style.cursor = "grab";
-    // if (moved && clicked) {
-    //   x = lastX;
-    //   x2 = lastX2;
-    //   x = move(e).list_click;
-    //   x2 = move(e).list_click2;
-    // }
-    // clicked = false;
-    // moved = false;
+    if (moved && clicked) {
+      clicked = false;
+      moved = false;
+    }
+
   }
 
-  // function move(e) {
-  //   moved = true;
-  //   console.log(e);
-  //   let list_click = 0;
-  //   let list_click2 = 0;
-  //   if (clicked) {
-  //     if (width >= Math.abs(x)) {
-  //       list_click = (x - e.clientX) * -1;
-  //     }
-  //     if (list2.offsetWidth >= Math.abs(x2)) {
-  //       list_click2 = (x2 - e.clientX) * -1;
-  //     }
-  //     list.style.left = `${list_click}px`;
-  //     list2.style.left = `${list_click2}px`;
+  function move(e) {
+    moved = true;
+    let list_click = 0;
+    let list_click2 = 0;
+    if (clicked) {
+      x -= e.movementX * 2;
+      x2 -= e.movementX * 2;
+      list.style.left = `${x}px`;
+      list2.style.left = `${x2}px`;
 
-  //     // lastX = list_click;
-  //     // lastX2 = list_click2;
-  //   }
-  // }
+      lastX = list_click;
+      lastX2 = list_click2;
+    }
+  }
+
   carouselSlider.addEventListener("mousedown", down);
   document.body.addEventListener("mouseup", up);
-  // carouselSlider.addEventListener("mousemove", move);
+  carouselSlider.addEventListener("mousemove", move);
 }
 
 function loadAnimation() {
@@ -283,7 +306,6 @@ function loadAnimation() {
       });
     }
 
-    // Let's go
     loadAnimation();
   }
 })();
